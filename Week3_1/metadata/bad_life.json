@@ -1,0 +1,13 @@
+{
+    "title" : "Bad Life",
+    "description": "What a boring world! Remember me who did nothing!",
+    "image" : "ipfs://QmYuVzooMY5JXWAvPDwZb3oh21KjEptVaoDqhJ89FUN3nd",
+    "attributes":[
+        {
+            "trait_type" : "time",
+            "vaule" : "2023/3/27/14:37"
+        }
+    ],
+
+    "version" : "2"
+}
