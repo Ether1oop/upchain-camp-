@@ -22,7 +22,6 @@ describe("ERC20Upgrade",async function(){
 
         // 升级
         const EtherloopV2 = await ethers.getContractFactory("EtherloopUpgradeV2");
-        
         const etherloopV2 = await upgrades.upgradeProxy(etherloopV1.address,EtherloopV2);
         // 实现(逻辑)合约地址
         implementation_address = await upgrades.erc1967.getImplementationAddress(etherloopV1.address);

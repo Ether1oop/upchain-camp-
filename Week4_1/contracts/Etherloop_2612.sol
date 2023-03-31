@@ -1,22 +1,22 @@
-
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
 
-import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/draft-ERC20Permit.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
+// import "openzeppelin-contracts/contracts/utils/Address.sol";
+
 
 interface TokenRecipient {
     function tokensReceived(address token_address, address sender, uint amount) external returns (bool);
 }
 
 
-contract EtherloopUpgradeV2 is ERC20Upgradeable{
-
-    function initialize(string memory _name, string memory _symbol) public initializer{
-        __ERC20_init(_name,_symbol);
-        _mint(msg.sender, 100000 * 10 ** 18);
+contract Etherloop_2612 is ERC20Permit{
+    constructor() ERC20("Etherloop", "ELP") ERC20Permit("Etherloop"){
+        _mint(msg.sender, 100000 * 10 ** 2);
     }
 
+    // transferWithCallback是一种
     function transferWithCallback(address to, uint256 amount) public returns(bool){
         transfer(to, amount);
 
@@ -26,4 +26,6 @@ contract EtherloopUpgradeV2 is ERC20Upgradeable{
         }
         return true;
     }
+
 }
+
