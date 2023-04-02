@@ -12,7 +12,7 @@ interface TokenRecipient {
 
 contract EtherloopUpgradeV2 is ERC20Upgradeable{
 
-    function initialize(string memory _name, string memory _symbol) public initializer{
+    function initialize(string memory _name, string memory _symbol) public onlyInitializing{
         __ERC20_init(_name,_symbol);
         _mint(msg.sender, 100000 * 10 ** 18);
     }
